@@ -58,7 +58,7 @@ export default function (Alpine) {
             controller.abort()
         })
 
-        el.addEventListener('input', () => processInputValue(el), {
+        el.addEventListener('input', () => processInputValue(el, el.type == 'number' ? false : true), {
             signal: controller.signal,
             // Setting this as a capture phase listener to ensure it runs
             // before wire:model or x-model added as a latent binding...
